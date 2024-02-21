@@ -10,4 +10,4 @@ const gl = context_get_webgl2(canvas);
 gl.clearColor(0.0, 0.0, 1.0, 1.0);
 gl.clear(gl.COLOR_BUFFER_BIT)
 
-const program = program_create(gl, "assets/shaders/default.v.glsl", "assets/shaders/default.f.glsl");
+const program = await program_create(gl, "assets/shaders/default.v.glsl", "assets/shaders/default.f.glsl");
