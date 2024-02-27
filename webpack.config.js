@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: "./src/index.ts",
     module: {
         rules: [
@@ -16,14 +16,11 @@ module.exports = {
         extensions: [".tsx", ".ts", ".js"],
     },
     output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "public"),
+        path: path.resolve(__dirname, "out"),
+        filename: "index.js",
+        libraryTarget: 'umd',
+        library: 'MyLib',
+        umdNamedDefine: true
     },
-    devServer: {
-        static: {
-            directory: path.join(__dirname, "public"),
-        },
-        compress: true,
-        port: 8080,
-    },
+    devtool: 'inline-source-map'
 };
