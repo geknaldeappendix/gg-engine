@@ -10,8 +10,3 @@ export function canvas_create(width: number = 300, height: number = 150): HTMLCa
     canvas_resize(canvas, width, height);
     return canvas;
 }
-
-export function canvas_fullscreen(canvas: HTMLCanvasElement) {
-    window.onresize = () => canvas_resize(canvas, document.body.clientWidth, document.body.clientHeight);
-    canvas_resize(canvas, document.body.clientWidth, document.body.clientHeight);
-}
