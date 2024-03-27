@@ -18,7 +18,11 @@ on_resize(canvas, gl);
 
 document.body.appendChild(canvas);
 
-export function gg_engine_create(tick: () => void, render: () => void) {
+export function gg_engine_create() {
+
+}
+
+export function gg_engine_start(tick: () => void, render: () => void) {
     let prev_tick: number = 0;
     let prev_second: number = 0;
     let fps = 0;

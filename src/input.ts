@@ -70,3 +70,7 @@ export function input_key(key: string): boolean {
 export function input_mouse(button: number): boolean {
     return input.mouse.buttons[button];
 }
+
+export function input_mouse_position(): [number, number] {
+    return [input.mouse.x, input.mouse.y];
+}

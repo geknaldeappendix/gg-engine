@@ -14,3 +14,4 @@ export type Input = {
 export declare function input_create(canvas: HTMLCanvasElement, pointer_lock: boolean): void;
 export declare function input_key(key: string): boolean;
 export declare function input_mouse(button: number): boolean;
+export declare function input_mouse_position(): [number, number];
