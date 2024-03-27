@@ -1,9 +1,5 @@
-import { Input } from "./graphics";
 export * from "./graphics";
-export type Engine = {
-    canvas: HTMLCanvasElement;
-    input: Input;
-    gl: WebGL2RenderingContext;
-};
-export declare function gg_engine_create(): Engine;
-export declare function gg_engine_start(): void;
+export * from "./input";
+export declare const canvas: HTMLCanvasElement;
+export declare const gl: WebGL2RenderingContext;
+export declare function gg_engine_create(tick: () => void, render: () => void): void;
