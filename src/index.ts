@@ -1,8 +1,10 @@
+import { AssetsPayload, assets_load } from "./assets";
 import { canvas_create, canvas_resize, context_get_webgl2 } from "./graphics";
 import { input_create } from "./input";
 
 export * from "./graphics"
 export * from "./input"
+export * from "./assets"
 
 function on_resize(canvas: HTMLCanvasElement, gl: WebGL2RenderingContext) {
     canvas_resize(canvas, document.body.clientWidth, document.body.clientHeight);
@@ -18,8 +20,8 @@ on_resize(canvas, gl);
 
 document.body.appendChild(canvas);
 
-export function gg_engine_create() {
-
+export async function gg_engine_preload(assets_payload: AssetsPayload) {
+    await assets_load(assets_payload, gl);
 }
 
 export function gg_engine_start(tick: () => void, render: () => void) {
